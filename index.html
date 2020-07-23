@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动型页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100%;
+            background-size:contain;
+            transition: 1s linear all;
+        }
+
+        #container>:nth-child(1) {
+            height: 1200px;
+            background-image: url(./images/1.jpg);
+        }
+
+        #container>:nth-child(2) {
+            height: 1200px;
+            background-image: url(./images/2.jpg);
+        }
+
+        #container>:nth-child(3) {
+            height: 1200px;
+            background-image: url(./images/3.jpg);
+        }
+
+        #container>:nth-child(4) {
+            height: 1200px;
+            background-image: url(./images/4.jpg);
+        }
+ 
+
+        .animation::before {
+            content: "";
+            width: 100%;
+            height: inherit;
+            display: block;
+            opacity: 0.5;
+            background: #00B4DB;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0083B0, #00B4DB);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    </style>
+</head>
+
+<body>
+    <div id='container'>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div style='height:500px;'>页脚</div>
+</body>
+<script src='./scrollnew.js'></script>
+
+</html>
