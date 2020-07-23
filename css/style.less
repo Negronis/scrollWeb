@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+html,body{
+    width:100%;
+    overflow-x: hidden;
+}
+div {
+    width: 100%;
+    background-size: 100% 100%;
+}
+ 
+#container {
+    &>:nth-child(1){
+        height: 700px;
+        position: relative;
+        background-image: url(../images/1.jpg);
+        &::before{
+            content: "";
+            height: inherit;
+            width: 100%;
+            background: rgba(0, 0, 0, .5);
+            display: inline-block;
+        } 
+    }
+    &>:nth-child(2) {
+        height: 700px;
+        position: relative; 
+        transition: 3s linear all; 
+        background-image: url(../images/2.jpg);
+        // 灰度滤镜
+        filter: grayscale(100%);
+    }
+    &>:nth-child(3) {
+        height: 1200px;
+        background-image: url(./images/3.png);
+    }
+    &>:nth-child(4) {
+        height: 1200px;
+        background-image: url(./images/4.jpg);
+    } 
+} 
+.animation::before {
+    /* content: "";
+    width: 100%;
+    height: inherit;
+    display: block;
+    opacity: 0.5;
+    background: linear-gradient(to right, #0083B0, #00B4DB); */
+}
+.headerTop {
+    height: 120px;
+    width: 100%;
+    border-bottom: 1px solid #e8eaec; 
+    &-container{
+        width: 80%;
+        margin:0 auto;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+    }
+    &-child{
+        width:10%;
+        margin-top:40px;
+        display: flex;
+        justify-content:space-around;  
+        text-align: left;
+        &-img{
+            line-height:40px;
+        }
+    }
+} 
+.header {
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    line-height: 60px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+} 
+.header-first {
+    flex: 10; 
+    justify-content: center;
+    div {
+        display: inline-block;
+        width: 10%;
+    } 
+}  
+.header-last {
+    display: flex;
+    flex: 10;
+    div{
+        width: 15%;
+        text-align: center;
+    }
+}
+.container-first-child{
+    color:#fff;
+    position: absolute;
+    top:250px; 
+    left:250px;
+    animation: TopToBottom 3s ; 
+
+    h1{ 
+        font-size:40px;
+    }
+    h3{  
+        margin-top:20px; 
+    }
+}
+.container-second{
+    color:#fff;
+    &-child{ 
+        position: absolute;
+        top:250px; 
+        left:250px;
+        h1{
+            font-size:40px;
+        }
+        h3{
+            margin-top:20px;
+        }
+    }
+}
+@keyframes TopToBottom{
+    0% {
+        transform: translateY(-20px); 
+        opacity: 0; 
+    }  
+    100%{
+        transform: translateY(0px);  
+
+    }
+}
