@@ -31,17 +31,27 @@ let containerFirst = document.querySelector('#containerFirst');
 let containerSecond = document.querySelector('#containerSecond');
 
 // 第一个div绑定事件
-let thro_scroll_func = function(){
+// 进入第一个div的时候
+let thro_scroll_func = function(){  
+} 
+// 离开第一个div的时候
+let thro_scroll_outerFunc = function(){ 
     containerSecond.style.filter = "grayscale(0%)";
     containerSecond.style.color = "#000"; 
-} 
-let thro_scroll_outerFunc = function(){ 
+}
+let thro_scroll_seDivin = ()=>{
+    containerSecond.style.filter = "grayscale(0%)";
+    containerSecond.style.color = "#000"; 
+}
+let thro_scroll_seDivOut = ()=>{
     containerSecond.style.filter = "grayscale(100%)";
-    containerSecond.style.color = "#fff";  
+    containerSecond.style.color = "#fff"; 
 }
 let thro_scroll = throttle(ScrollDiv,containerFirst,thro_scroll_func,thro_scroll_outerFunc) ;
+let thro_scroll_sec = throttle(ScrollDiv,containerSecond,thro_scroll_seDivin,thro_scroll_seDivOut) ;
 
 // 滚动事件绑定
 window.onscroll = function () {
     thro_scroll();
+    thro_scroll_sec()
 }

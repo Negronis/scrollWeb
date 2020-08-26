@@ -11,45 +11,83 @@ div {
   width: 100%;
   background-size: 100% 100%;
 }
-#container > :nth-child(1) {
-  height: 700px;
+#container > :nth-child(4) {
+  position: relative;
+  height: 1000px;
+  background-image: url(../images/4.jpg);
+}
+.container-first {
+  height: 1000px;
   position: relative;
   background-image: url(../images/1.jpg);
 }
-#container > :nth-child(1)::before {
+.container-first::before {
   content: "";
   height: inherit;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: inline-block;
 }
-#container > :nth-child(2) {
-  height: 700px;
+.container-first-child {
+  color: #fff;
+  position: absolute;
+  top: 250px;
+  left: 250px;
+  animation: TopToBottom 3s ;
+}
+.container-first-child h1 {
+  font-size: 40px;
+}
+.container-first-child h3 {
+  margin-top: 20px;
+}
+.container-second {
+  height: 1000px;
   position: relative;
   transition: 3s linear all;
   background-image: url(../images/2.jpg);
   filter: grayscale(100%);
+  color: #fff;
 }
-#container > :nth-child(3) {
-  height: 1200px;
-  background-image: url(images/3.png);
+.container-second-child {
+  position: absolute;
+  top: 250px;
+  left: 250px;
 }
-#container > :nth-child(4) {
-  height: 1200px;
-  background-image: url(images/4.jpg);
+.container-second-child h1 {
+  font-size: 40px;
 }
-.animation::before {
-  /* content: "";
-    width: 100%;
-    height: inherit;
-    display: block;
-    opacity: 0.5;
-    background: linear-gradient(to right, #0083B0, #00B4DB); */
+.container-second-child h3 {
+  margin-top: 20px;
+}
+.container-third {
+  position: relative;
+}
+.container-third-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-filter: grayscale(20%);
+}
+@keyframes TopToBottom {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 .headerTop {
   height: 120px;
   width: 100%;
   border-bottom: 1px solid #e8eaec;
+  color: #fff;
 }
 .headerTop-container {
   width: 80%;
@@ -94,39 +132,10 @@ div {
   width: 15%;
   text-align: center;
 }
-.container-first-child {
-  color: #fff;
-  position: absolute;
-  top: 250px;
-  left: 250px;
-  animation: TopToBottom 3s ;
-}
-.container-first-child h1 {
-  font-size: 40px;
-}
-.container-first-child h3 {
-  margin-top: 20px;
-}
-.container-second {
-  color: #fff;
-}
-.container-second-child {
-  position: absolute;
-  top: 250px;
-  left: 250px;
-}
-.container-second-child h1 {
-  font-size: 40px;
-}
-.container-second-child h3 {
-  margin-top: 20px;
-}
-@keyframes TopToBottom {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.footer {
+  display: flex;
+  color: #000;
+  text-align: center;
+  background: #fff;
+  padding: 10px;
 }
